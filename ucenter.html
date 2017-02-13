@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>个人中心</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="css/public.css" />
+    <link type="text/css" rel="stylesheet" href="css/Style.css" />
+    <link type="text/css" rel="stylesheet" href="css/computer.css" />
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var win_h = $(document).height();
+            $('.menu_bg').height(win_h);
+
+            //打开关闭菜单事件
+            $(".menu_list_div").click(function () {
+                var cl = $(this).siblings("ul").css("display");
+                if (cl == "none") {
+                    $(this).addClass("check");
+                    $(this).siblings("ul").slideDown(300);
+                } else {
+                    $(this).removeClass("check");
+                    $(this).siblings("ul").slideUp(300);
+                }
+            });
+            //二级菜单点击事件
+            $(".menu_list li h3").click(function () {
+                $(".menu_list li h3").removeClass("active");
+                $(this).addClass("active");
+            });
+
+            $(".menu_btn").click(function () {
+                $(".menu_bg,.menu_div").css("right", "0");
+                $(".menu_bg").css("opacity", "0.7");
+            });
+
+            $(".menu_close").click(function () {
+                $(".menu_div").css("right", "-100%");
+                $(".menu_bg").css("opacity", "0");
+                setTimeout(function () {
+                    $(".menu_bg").css("right", "-100%");
+                }, 300)
+            });
+            $(".menu_bg").click(function () {
+                $(".menu_div").css("right", "-100%");
+                $(".menu_bg").css("opacity", "0");
+                setTimeout(function () {
+                    $(".menu_bg").css("right", "-100%");
+                }, 300)
+            });
+
+            //点击选择初级、中高级课程事件
+            $(".les_til_div").click(function () {
+                var i = $(this).index();
+                $(".les_til_div").removeClass("active");
+                $(this).addClass("active");
+                $(".lesson_box").css("display", "none");
+                $(".lesson_box").eq(i).css("display", "block");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="top_box">
+        
+        <img class="mid_logo" alt="" src="images/t_m_logo.png" />
+        <div class="menu_btn">
+            <img alt="" src="images/menu.png" />
+        </div>
+    </div>
+    <!--菜单-->
+    <div class="menu_box">
+        <div class="menu_bg"></div>
+        <div class="menu_div">
+            <div class="menu_close"><img alt="" src="images/close_icon.png" /></div>
+            <div class="user_box">
+                <img alt="" src="images/menu_user.png" />
+                <div class="btn_box">
+                    <h2>欢迎你，李阳！</h2>
+                    <div class="menu_btn">登录</div>
+                    <div class="menu_btn">注册</div>
+                </div>
+            </div>
+            <div class="menu_list_title">
+                <img alt="" src="images/menu_list.png" />
+                <h2>进入课堂</h2>
+            </div>
+
+            <div class="menu_list">
+                <div class="menu_list_div check">
+                    <h2>欧铁集团G.I.E.</h2>
+                    <img alt="" src="images/arrow.png" />
+                </div>
+                <ul class="op">
+                    <li>
+                        <h3 class="active">欧铁集团G.I.E.</h3>
+                    </li>
+                    <li>
+                        <h3>成为欧铁代理商</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_list">
+                <div class="menu_list_div">
+                    <h2>开启欧铁之旅</h2>
+                    <img alt="" src="images/arrow.png" />
+                </div>
+                <ul>
+                    <li>
+                        <h3>欧铁集团G.I.E.</h3>
+                    </li>
+                    <li>
+                        <h3>成为欧铁代理商</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_list">
+                <div class="menu_list_div">
+                    <h2>资源&应用</h2>
+                    <img alt="" src="images/arrow.png" />
+                </div>
+                <ul>
+                    <li>
+                        <h3>欧铁集团G.I.E.</h3>
+                    </li>
+                    <li>
+                        <h3>成为欧铁代理商</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_list">
+                <div class="menu_list_div">
+                    <h2>新闻&优惠活动</h2>
+                    <img alt="" src="images/arrow.png" />
+                </div>
+                <ul>
+                    <li>
+                        <h3>欧铁集团G.I.E.</h3>
+                    </li>
+                    <li>
+                        <h3>成为欧铁代理商</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu_list">
+                <div class="menu_list_div">
+                    <h2>在线学习</h2>
+                    <img alt="" src="images/arrow.png" />
+                </div>
+                <ul>
+                    <li>
+                        <h3>欧铁集团G.I.E.</h3>
+                    </li>
+                    <li>
+                        <h3>成为欧铁代理商</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--个人中心-->
+    <div class="user_center_box">
+        <h2>个人中心</h2>
+        <div class="user_center_info">
+            <h3>欢迎你，李阳</h3>
+            <img class="user_photo" alt="" src="images/usercenter_user.png" />
+            <div class="user_opation">
+                <div class="opation_div">
+                    <img alt="" src="images/opation.png" />
+                    <h4>修改个人资料</h4>
+                </div>
+                <div class="opation_div">
+                    <img alt="" src="images/key.png" />
+                    <h4>修改登录密码</h4>
+                </div>
+            </div>
+        </div>
+        <div class="medel_div">
+            <img alt="" src="images/medal.png" />
+            <h3>你已成为欧铁通票专家(初级)</h3>
+        </div>
+    </div>
+    <div class="statistics_box">
+        <h2>2008<br />当前注册(人)</h2>
+        <h2>465<br />专家称号(人)</h2>
+        <h2>19<br />目前排名(人)</h2>
+    </div>
+    <div class="operation_box">
+        <div class="operation_div">
+            <div class="operation_img">
+                <img alt="" src="images/ad_button_07.png" />
+            </div>
+            <div class="operation_line"></div>
+            <h2>积分换礼物</h2>
+        </div>
+        <div class="operation_div">
+            <div class="operation_img">
+                <img alt="" src="images/ad_button_08.png" />
+            </div>
+            <div class="operation_line"></div>
+            <h2>邀请好友</h2>
+        </div>
+        <div class="operation_div">
+            <div class="operation_img">
+                <img alt="" src="images/ad_button_06.png" />
+            </div>
+            <div class="operation_line"></div>
+            <h2>资料领取</h2>
+        </div>
+    </div>
+    <img class="mid_img" alt="" src="images/usercenter_mid1.jpg" />
+    <div class="course_description_box">
+        <div class="description_div">
+            <img class="top_img" alt="" src="images/study.jpg" />
+            <h2>共14课，全部完成后方可获得“欧洲通票专家”证书及领取礼品</h2>
+            <img class="bottom_arrow" alt="" src="images/bottom_arrow.png" />
+        </div>
+    </div>
+
+    <div class="lesson_title">
+        <div class="les_til_div active">
+            <img alt="" src="images/primary_star.png" />
+            <h2>初级课程学习</h2>
+        </div>
+        <div class="les_til_div">
+            <img alt="" src="images/advanced_star.png" />
+            <h2>中高级课程学习</h2>
+        </div>
+    </div>
+    <div class="lesson_box">
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>01</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁通票的历史及概念</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_1.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>02</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁通票全部产品</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>03</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>运输公司网络</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_1.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>04</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁通票折扣</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>05</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁通票优惠</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div primary_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_g.png" />
+                <h2>06</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>那些旅客会成为欧铁客户</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+    </div>
+
+    <div class="lesson_box dis_n">
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>07</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>如何销售欧铁通票</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_1.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>08</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁通票价格</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>09</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>自选通票价格分层</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_1.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>10</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>预定</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>11</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>如何使用欧铁通票</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>12</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧铁伴您一生</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>13</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>欧洲铁路援助办公室</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+        <div class="lesson_div advanced_les">
+            <div class="lesson_num">
+                <img alt="" src="images/round_b.png" />
+                <h2>14</h2>
+            </div>
+            <div class="les_front_box">
+                <img alt="" src="images/course_front.png" />
+                <div class="les_name">
+                    <h2>更换及退款政策</h2>
+                    <p>&gt;进入课程</p>
+                </div>
+            </div>
+            <div class="img_box">
+                <img alt="" src="images/lesson_2.jpg" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="congratulation_box">
+        <img class="bg_img" alt="" src="images/congratulation_border_g.png" />
+        <div class="congratulation_div">
+            <img alt="" src="images/medal.png" />
+            <h2>恭喜你！你已通过初级课程测验，成为“欧铁通票专家（初级）”！</h2>
+        </div>
+    </div>
+    <div class="test_box">
+        <img class="bg_img" alt="" src="images/course_test_b.png" />
+        <div class="test_div">
+            <img alt="" src="images/que_mark.png" />
+            <h2>中高级课程测验</h2>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="bottom_box">
+        <div class="contact_us f_l">
+            <img class="logo" alt="" src="images/bottom_logo.png" />
+            <h2>联系我们</h2>
+            <div class="contact_info">
+                <ul>
+                    <li>
+                        <img alt="" src="images/contact_icon_01.png" />
+                        <h3>4567 Street name,012 12 City name,Country</h3>
+                    </li>
+                    <li>
+                        <img alt="" src="images/contact_icon_02.png" />
+                        <h3>+012 345 678</h3>
+                    </li>
+                    <li>
+                        <img alt="" src="images/contact_icon_03.png" />
+                        <h3>info@cn.eurail.com</h3>
+                    </li>
+                    <li>
+                        <img alt="" src="images/contact_icon_04.png" />
+                        <h3>http://www.eurailgroup.org/</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom_info">
+            <h2>Copyright © 2016-2019 eurailexpert.com™  All rights reserced.</h2>
+        </div>
+    </div>
+</body>
+</html>
